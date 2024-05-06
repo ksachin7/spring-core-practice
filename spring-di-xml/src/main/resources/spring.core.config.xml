@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+<!-- bean definitions here -->
+    <!-- beans for AddressService implementations -->
+    <bean id="address" class="org.example.AddressServiceImpl">
+        <property name="city" value="New York" />
+        <property name="street" value="Broadway" />
+    </bean>
+<!--    <bean id="address" class="org.example.AddressServiceImpl">-->
+<!--        <constructor-arg value="New York" />-->
+<!--        <constructor-arg value="Broadway" />-->
+<!--    </bean>-->
+
+    <!-- beans for Grade -->
+    <bean id="mathGrade" class="org.example.Grade">
+        <property name="subject" value="math" />
+        <property name="grade" value="A" />
+    </bean>
+    <bean id="scienceGrade" class="org.example.Grade">
+        <property name="subject" value="science" />
+        <property name="grade" value="B+" />
+    </bean>
+
+    <!-- beans for Course -->
+    <bean id="javaCourse" class="org.example.Course">
+        <property name="courseId" value="01" />
+        <property name="courseName" value="Java" />
+    </bean>
+    <bean id="springCourse" class="org.example.Course">
+        <property name="courseId" value="02" />
+        <property name="courseName" value="Spring Framework" />
+    </bean>
+
+    <!--    bean for friend-->
+    <bean id="anotherStudent" class="org.example.Student">
+        <property name="sid" value="002" />
+        <property name="studentName" value="Alice" />
+    </bean>
+
+    <!--    constructor injection-->
+    <bean id="studentConstructor" class="org.example.Student">
+        <constructor-arg value="1" />
+        <constructor-arg value="Alice" />
+        <constructor-arg ref="address" />
+        <constructor-arg>
+            <list>
+                <ref bean="javaCourse" />
+                <ref bean="springCourse" />
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <set>
+                <value>Reading</value>
+                <value>Coding</value>
+            </set>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="math" value-ref="mathGrade" />
+                <entry key="science" value-ref="scienceGrade" />
+            </map>
+        </constructor-arg>
+        <constructor-arg ref="anotherStudent" />
+    </bean>
+
+    <!--    setter injection-->
+    <bean id="studentSetter" class="org.example.Student">
+        <property name="sid" value="2"/>
+        <property name="studentName" value="Alice"/>
+        <property name="address" ref="address"/>
+        <property name="courses">
+            <list>
+                <ref bean="javaCourse" />
+                <ref bean="springCourse" />
+            </list>
+        </property>
+        <property name="hobbies">
+            <set>
+                <value>Reading</value>
+                <value>Coding</value>
+            </set>
+        </property>
+        <property name="grades">
+            <map>
+                <entry key="math" value-ref="mathGrade" />
+                <entry key="science" value-ref="scienceGrade" />
+            </map>
+        </property>
+        <property name="friend" ref="anotherStudent" />
+    </bean>
+
+    <!--    field injection-->
+    <bean id="studentField" class="org.example.Student">
+        <property name="sid" value="2"/>
+        <property name="studentName" value="Alice"/>
+        <property name="address" ref="address"/>
+        <property name="courses">
+            <list>
+                <ref bean="javaCourse" />
+                <ref bean="springCourse" />
+            </list>
+        </property>
+        <property name="hobbies">
+            <set>
+                <value>Reading</value>
+                <value>Coding</value>
+            </set>
+        </property>
+        <property name="grades">
+            <map>
+                <entry key="math" value-ref="mathGrade" />
+                <entry key="science" value-ref="scienceGrade" />
+            </map>
+        </property>
+        <property name="friend" ref="anotherStudent" />
+    </bean>
+
+    <!--    interface injection-->
+    <bean id="addressInterface" class="org.example.AddressServiceImpl">
+        <constructor-arg value="New York" />
+        <constructor-arg value="Broadway" />
+    </bean>
+
+<!--    Autowiring-->
+
+
+    <!-- Enable annotation-based configuration -->
+    <context:annotation-config/>
+</beans>
