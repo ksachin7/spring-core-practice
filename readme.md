@@ -9,11 +9,13 @@
 ## Project Descriptions
 **Project Name:** basics
 
-Contains basic practice of using SpringContext, creating a bean, fetching a bean from context, etc.
-
----
-
-**Project Name:** 
+Contains basic practice of 
+- Using Spring Context
+- Creating beans using annotations such as @Bean, @Component, @Configuration, and @Primary
+- Utilizing ComponentScan and @Autowired for bean discovery and dependency injection
+- Fetching a bean from context
+- Handling NoUniqueBeanDefinitionException
+- Providing custom name to a bean, etc.
 
 ---
 
@@ -26,42 +28,19 @@ This project demonstrates the usage of Spring's lifecycle annotations (`@PostCon
 
 **Project Name:** spring-di
 
-This project demonstrates various types of Dependency Injection (DI) in a Spring application. Dependency Injection is a design pattern used to inject dependencies into a class, promoting loose coupling and easier testing.
+This project demonstrates various types of Dependency Injection (DI) in a Spring application using XML and java configurations. Dependency Injection is a design pattern used to inject dependencies into a class, promoting loose coupling and easier testing.
 
 **Types of DI**
 - Constructor Injection: Dependencies are injected through the class constructor.
 - Setter Injection: Dependencies are injected through setter methods.
 - Field Injection: Dependencies are injected directly into fields of a class.
+- Interface Injection: Dependencies are injected through an interface implemented by the class.
+- Autowiring: Dependencies are automatically injected by Spring based on specific rules or annotations.
 
-**Bean Registration:** Beans are registered in the Spring IoC container using Java configuration.
-
-```java
-spring-di-demo
-│
-├── src
-│   └── main
-│       └── java
-│           └── com
-│               └── example
-│                   ├── AppConfig.java
-│                   ├── App.java
-│                   ├── Service.java
-│                   ├── ServiceImpl.java
-│                   ├── ConstructorInjectedController.java
-│                   ├── SetterInjectedController.java
-│                   └── FieldInjectedController.java
-│
-└── pom.xml
-```
-
----
-
-**Project Name:** spring-di-xml
-
-
+**Note:** It's important to note that field injection is generally considered less preferable than constructor injection or setter injection due to potential issues with testability, encapsulation, and readability. It's often recommended to favor constructor injection or setter injection over field injection whenever possible.
 
 ```java
-spring-di-xml
+spring-di
 .
 ├── pom.xml
 ├── src
