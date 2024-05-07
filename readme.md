@@ -57,3 +57,29 @@ spring-di-demo
 ---
 
 **Project Name:** spring-di-xml
+
+
+
+```java
+spring-di-xml
+.
+├── pom.xml
+├── src
+│ ├── main
+│ │ ├── java
+│ │ │ └── org
+│ │ │     └── example
+│ │ │         ├── AddressService.java
+│ │ │         ├── AddressServiceImpl.java
+│ │ │         ├── Course.java
+│ │ │         ├── Grade.java
+│ │ │         ├── Main.java
+│ │ │         └── Student.java
+│ │ └── resources
+│ │     └── spring.core.config.xml
+│ └── test
+│     └── java
+└── target
+    ├── classes
+  
+```

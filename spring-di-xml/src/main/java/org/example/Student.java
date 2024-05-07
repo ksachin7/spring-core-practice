@@ -7,23 +7,20 @@ import java.util.*;
 public class Student {
     private int sid;
     private String studentName;
-
-    // Field injection
-    @Autowired
-    private AddressService address;
+    private AddressService addressService;
 
     private List<Course> courses;       // Collection List injection
     private Set<String> hobbies;        // Collection Set injection
     private Map<String, Grade> grades;  // Collection Map injection
-    private Student friend;             // Reference type injection
+    private Friend friend;             // Reference type injection
 
     public Student() {
     }
 
-    public Student(int sid, String studentName, AddressService address, List<Course> courses, Set<String> hobbies, Map<String, Grade> grades, Student friend) {
+    public Student(int sid, String studentName, AddressService addressService, List<Course> courses, Set<String> hobbies, Map<String, Grade> grades, Friend friend) {
         this.sid = sid;
         this.studentName = studentName;
-        this.address = address;
+        this.addressService = addressService;
         this.courses = courses;
         this.hobbies = hobbies;
         this.grades = grades;
@@ -46,13 +43,16 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public AddressService getAddress() {
-        return address;
+    public AddressService getAddressService() {
+        return addressService;
     }
 
-//    @Autowired
-    public void setAddress(AddressService address) {
-        this.address = address;
+    public void setAddressService(AddressService addressService) {
+        this.addressService = addressService;
+    }
+
+    public String getAddress() {
+        return addressService.getAddress();
     }
 
     public List<Course> getCourses() {
@@ -61,10 +61,6 @@ public class Student {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
-    }
-
-    public Student getFriend() {
-        return friend;
     }
 
     public Set<String> getHobbies() {
@@ -83,7 +79,11 @@ public class Student {
         this.grades = grades;
     }
 
-    public void setFriend(Student friend) {
+    public Friend getFriend() {
+        return friend;
+    }
+
+    public void setFriend(Friend friend) {
         this.friend = friend;
     }
 
@@ -92,7 +92,7 @@ public class Student {
         return "Student{" +
                 "sid=" + sid +
                 ", studentName='" + studentName + '\'' +
-                ", address=" + address +
+                ", address=" + getAddress() +
                 ", courses=" + courses +
                 ", hobbies=" + hobbies +
                 ", grades=" + grades +

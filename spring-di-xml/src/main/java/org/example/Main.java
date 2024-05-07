@@ -11,11 +11,11 @@ public class Main {
         ApplicationContext context= new ClassPathXmlApplicationContext("spring.core.config.xml");
 
         // Retrieve the Student bean from the context
-        Student student= (Student) context.getBean("studentConstructor");
-//        Student student= (Student) context.getBean("studentField");
-//        Student student= (Student) context.getBean("studentSetter");
+//        Student student= (Student) context.getBean("studentConstructorInjection");
+//        Student student= (Student) context.getBean("studentSetterInjection");
+        Student student= context.getBean("autowiringStudent", Student.class);
 
-//        AddressService student= (AddressService) context.getBean("addressInterface");
+//        AddressService student= (AddressService) context.getBean("addressInterfaceInjection");
 //        System.out.println("Address: "+student.getAddress());
 
         // Display information about the student
