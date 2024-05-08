@@ -51,8 +51,10 @@ spring-di
 │ │ │         ├── AddressService.java
 │ │ │         ├── AddressServiceImpl.java
 │ │ │         ├── Course.java
+│ │ │         ├── Friend.java
 │ │ │         ├── Grade.java
 │ │ │         ├── Main.java
+│ │ │         ├── SpringConfig.java
 │ │ │         └── Student.java
 │ │ └── resources
 │ │     └── spring.core.config.xml
@@ -60,5 +62,7 @@ spring-di
 │     └── java
 └── target
     ├── classes
+    └── generated-sources
+        └── annotations
   
 ```
