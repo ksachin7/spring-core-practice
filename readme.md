@@ -1,6 +1,6 @@
 # Spring-Core practices
 
-## Tools and Technologies used
+## Tools and Technologies
 **Spring Framework:** Version 6	
 **Build tool:** Maven	
 **Java:** Version 17	
@@ -50,7 +50,8 @@ Dependencies can be automatically wired by Spring based on predefined rules or a
     - **Field Injection:** Dependencies are directly injected into fields of a class, offering simplicity but potentially sacrificing encapsulation.
     - **Constructor Injection:** Dependencies are injected via the constructor, promoting immutable objects and enhancing testability.
     - **Setter Injection:** Dependencies are set using setter methods, allowing for optional dependencies and easier modification post-construction.
-- **@ComponentScan:** Spring scans the specified packages for components and automatically registers them as beans, reducing manual bean registration overhead.
+
+**@ComponentScan:** Spring scans the specified packages for components and automatically registers them as beans, reducing manual bean registration overhead.
 
 >Annotations used in Student class and others is for DI using annotation & java configurations only not for DI using xml configurations. <u>This is a practice project and I wanted to practice all types of injection in the same Student class to get a better idea of how things work.</u>
 
