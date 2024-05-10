@@ -65,7 +65,6 @@ public class Student {
         return addressService;
     }
 
-//    @Autowired
     public void setAddressService(AddressService addressService) {
         this.addressService = addressService;
     }

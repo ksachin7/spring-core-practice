@@ -137,48 +137,5 @@ public class Main {
 //            System.out.println("Student Details: " + student1.getClass().getName());
 //            System.out.println(student1);
 //        }
-
-//        ----- without using registerBean() -----
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-//
-//        // Retrieve necessary beans from the context
-//        AddressServiceImpl addressService = context.getBean(AddressServiceImpl.class);
-//        addressService.setCity("New York");
-//        addressService.setStreet("Broadway");
-//
-//        // Create sample data for courses
-//        List<Course> courses = new ArrayList<>();
-//        courses.add(new Course(1, "Mathematics"));
-//        courses.add(new Course(2, "Physics"));
-//
-//        // Create sample data for hobbies
-//        Set<String> hobbies = new HashSet<>();
-//        hobbies.add("Reading");
-//        hobbies.add("Swimming");
-//
-//        // Create sample data for grades
-//        Map<String, Grade> grades = new HashMap<>();
-//        grades.put("Math", new Grade("Math", "A"));
-//        grades.put("Physics", new Grade("Physics", "B"));
-//
-//        // Create sample data for friend
-//        Friend friend = new Friend(1, "Alice");
-//
-//        // Create Student object manually and set properties
-//        Student student = new Student();
-//        student.setSid(1);
-//        student.setStudentName("John Doe");
-//        student.setAddressService(addressService);
-//        student.setCourses(courses);
-//        student.setHobbies(hobbies);
-//        student.setGrades(grades);
-//        student.setFriend(friend);
-//
-//        // Display student info
-//        System.out.println(student);
-//
-//       //  Don't forget to close the context to release resources
-//        context.close();
-//        ---------------------------------------------------------------------------------
     }
 }
