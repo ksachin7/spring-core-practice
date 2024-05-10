@@ -12,11 +12,11 @@
 This project contains practice of various things including:
 - Using Spring Context
 - Creating beans using annotations such as @Bean, @Component, @Configuration
-- used @Qualifier, @Primary, and parameter-name to set priority
+- Providing custom name to a bean by @Bean annotation
+- Used @Qualifier to disambiguated beans
+- Handling NoUniqueBeanDefinitionException with @Primary
 - Utilizing ComponentScan and @Autowired for bean discovery and dependency injection
 - Fetching a bean from context
-- Handling NoUniqueBeanDefinitionException
-- Providing custom name to a bean, 
 - Practiced circular dependency
 
 ---
@@ -91,6 +91,10 @@ spring-di
 
 **Project Name:** beans-scope
 
+"beans-scope" is a project focusing on the fundamental aspects of Spring beans within the Spring framework. It covers essential concepts such as bean scopes (singleton and prototype), lazy vs. eager initialization, thread safety, etc.
+
+- Practiced Singleton & Prototype bean scope
+- Practiced Eager Initialization & Lazy Initialization
 
 ---
 
