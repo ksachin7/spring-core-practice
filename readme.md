@@ -30,20 +30,27 @@ This project contains practice of various things including:
 
 **Project Name:** spring-di
 
-This project demonstrates various types of Dependency Injection (DI) in a Spring application using XML and java configurations. Dependency Injection is a design pattern used to inject dependencies into a class, promoting loose coupling and easier testing.
+This project serves as a comprehensive guide to Dependency Injection (DI) within a Spring application, showcasing different implementation approaches through XML and Java configurations. 
 
-**Ways of injecting dependencies**
-- Xml configurations
-- Java configurations
+**Ways of injecting dependencies:**
+- **XML configurations:** Dependencies are defined and wired in XML files, allowing for a clear separation of concerns between configuration and code.
+- **Java configurations:** Dependencies are configured programmatically using Java classes, offering flexibility and type safety.
+- **Annotation-based:** Dependencies are declared using annotations like `@Autowired`, simplifying configuration and reducing boilerplate code.
 
-**Types of DI**
-- Constructor Injection: Dependencies are injected through the class constructor.
-- Setter Injection: Dependencies are injected through setter methods.
+**Types of DI:**
+- **Constructor Injection:** Dependencies are provided through a class constructor, ensuring that all required dependencies are available when an object is created.
+- **Setter Injection:** Dependencies are injected via setter methods, enabling more flexibility in changing dependencies at runtime without altering the constructor signature.
+<!-- - **Interface Injection:** Dependencies are injected through an interface implemented by the class, though this approach is less common in Spring due to its reliance on runtime reflection. -->
 
-**Ways of autowiring**
-- Field Injection: Dependencies are injected directly into fields of a class.
-<!-- - Interface Injection: Dependencies are injected through an interface implemented by the class. -->
-- Autowiring: Dependencies are automatically injected by Spring based on specific rules or annotations.
+**Ways of autowiring:**
+Dependencies can be automatically wired by Spring based on predefined rules or annotations, reducing manual configuration efforts.
+- **Using method parameter:** Dependencies are resolved based on method parameters, with Spring injecting appropriate beans.
+- **Using method call:** Beans are instantiated and wired with method calls, often used in conjunction with method parameter autowiring.
+- **@Autowired annotation:**
+    - **Field Injection:** Dependencies are directly injected into fields of a class, offering simplicity but potentially sacrificing encapsulation.
+    - **Constructor Injection:** Dependencies are injected via the constructor, promoting immutable objects and enhancing testability.
+    - **Setter Injection:** Dependencies are set using setter methods, allowing for optional dependencies and easier modification post-construction.
+- **@ComponentScan:** Spring scans the specified packages for components and automatically registers them as beans, reducing manual bean registration overhead.
 
 >Annotations used in Student class and others is for DI using annotation & java configurations only not for DI using xml configurations. <u>This is a practice project and I wanted to practice all types of injection in the same Student class to get a better idea of how things work.</u>
 
