@@ -2,29 +2,34 @@ package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 @Component  // this annotation is use for java config. for component scanning
-@Primary
 public class Student {
     private int sid;
     private String studentName;
-    // Field injection using java config.
-    @Autowired
+//     Field injection using java config.
+//    @Autowired
     private AddressService addressService;
 
-    @Autowired
+//    @Autowired
     private List<Course> courses;       // Collection List injection
+//    @Autowired
     private Set<String> hobbies;        // Collection Set injection
+//    @Autowired
     private Map<String, Grade> grades;  // Collection Map injection
+//    @Autowired
     private Friend friend;             // Reference type injection
 
     public Student() {
     }
 
+//    @Autowired(required = false)
     public Student(int sid, String studentName, AddressService addressService, List<Course> courses, Set<String> hobbies, Map<String, Grade> grades, Friend friend) {
         this.sid = sid;
         this.studentName = studentName;
@@ -34,15 +39,12 @@ public class Student {
         this.grades = grades;
         this.friend = friend;
     }
-    @Autowired
-    public Student(AddressService addressService, List<Course> courses, Set<String> hobbies, Map<String, Grade> grades, Friend friend) {
-//        this.studentName = studentName;
-        this.addressService = addressService;
-        this.courses = courses;
-        this.hobbies = hobbies;
-        this.grades = grades;
-        this.friend = friend;
+
+    public Student(int sid, String studentName) {
+        this.sid = sid;
+        this.studentName = studentName;
     }
+
     public int getSid() {
         return sid;
     }
@@ -63,6 +65,7 @@ public class Student {
         return addressService;
     }
 
+//    @Autowired
     public void setAddressService(AddressService addressService) {
         this.addressService = addressService;
     }
@@ -75,6 +78,7 @@ public class Student {
         return courses;
     }
 
+    @Autowired
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
@@ -83,6 +87,7 @@ public class Student {
         return hobbies;
     }
 
+    @Autowired
     public void setHobbies(Set<String> hobbies) {
         this.hobbies = hobbies;
     }
@@ -91,6 +96,7 @@ public class Student {
         return grades;
     }
 
+    @Autowired
     public void setGrades(Map<String, Grade> grades) {
         this.grades = grades;
     }
@@ -99,6 +105,7 @@ public class Student {
         return friend;
     }
 
+    @Autowired
     public void setFriend(Friend friend) {
         this.friend = friend;
     }
