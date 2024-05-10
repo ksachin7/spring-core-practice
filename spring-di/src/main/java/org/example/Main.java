@@ -18,7 +18,7 @@ public class Main {
         Student student= ctx.getBean(Student.class);
         System.out.println(student);
 
-        // Setiing values For Autowiring and ComponentScan only
+//        -------------------- For ComponentScan only(Setiing values) --------------------
 //        AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(SpringConfig.class);
 //
 //        // Retrieve beans from the context
@@ -82,7 +82,7 @@ public class Main {
         System.out.println(student2);
 
 
-        // ---------- this code is only for setting values while using @ComponentScan annotation ----------
+//         ---------- this code is only for setting values while using @ComponentScan annotation ----------
         // Note: This might not be the proper way of doing it. I will see it later.
         //  Functional Bean registeration
 //        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class)) {
