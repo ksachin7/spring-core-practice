@@ -100,6 +100,12 @@ spring-di
 
 **Project Name:** spring-aop
 
+This project aims to demonstrate a thorough implementation of Aspect-Oriented Programming (AOP) in a Spring application, focusing on logging as a cross-cutting concern. By leveraging various AOP annotations such as `@Before`, `@After`, `@Around`, `@AfterReturning`, and `@AfterThrowing`, as well as creating a custom annotation @LogExecutionTime, the project provides a comprehensive approach to managing method execution logging.
+
+- Brief explanation of key AOP annotations (`@Before`, `@After`, `@Around`, `@AfterReturning`, `@AfterThrowing`) and their roles in intercepting method execution.
+- Creation of a custom annotation @LogExecutionTime to mark methods for logging their execution time.
+- Explanation of how to use the custom annotation to apply logging aspect selectively.
+- Integration of logging framework (e.g., Java Util Logging or Log4j) to write concise method execution information.
 
 ---
 <!-- 
